@@ -1,0 +1,148 @@
+Email Assurance for ESP Cookbook
+====================
+
+Definitions
+---------------------
+
+### Email Assurance Report
+
+[Go to API Documentation on retrieving reports.]()
+
+This report is an overview of an email list’s quality. It includes the total number of subscribers in each grade category, A+, A, B, D, and F, and an overall grade for the list. This report does not provide data on specific email addresses. 
+
+Uses of this report: 
+
+*   When onboarding a new user - retrieve Email Assurance Reports on all of the lists a prospective/new user intends to use. These reports can be used to determine whether to accept the user as a trusted sender. If the user has several problematic lists, remediation can be recommended prior to deploying mail. If the user has highly questionable lists, it can be required that these lists be removed and not used in the ESP platform. 
+
+*   Prior to deploying email from a previously inactive user account - after a user has not deployed email for at least 3 months, retrieve an Email Assurance Report on the list prior to allowing the email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. 
+
+*   When a current user imports a new list - retrieve an Email Assurance Report prior to allowing email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. If the list is too risky, it can be disallowed altogether. 
+
+*   Embed the data to allow users to always see the Email Assurance Report - users can always know the list quality so it is not a surprise if remediation is recommended.
+
+### Email Assurance Grade
+
+[Go to API Documentation on retrieving grades.]()
+
+This grade — A+, A, B, D, or F— indicates an emails likelihood to be deliverable. Additional deliverability data is provided with the grade. Email Assurance Grade data is provided with the usage of a remediation token, or subscription.  
+     
+>   A+ indicates engagement history such as click or optin. 
+>   A indicates successful delivery history or a positive SMTP response. 
+>   B indicates an accepts all domain. 
+>   D indicates no response from a server, or temporary failure. 
+>   F indicates an undeliverable address due to history of bounces, or a negative SMTP response. 
+
+Uses of the grades:
+
+*   Determine what grades a user can deploy email to - A+ and A results are deliverable based on our most recent data. If a user is a trusted sender, perhaps B results can be allowed. D results should not be deployed email. F results should be unsubscribed.
+
+*   Automatically unsubscribe F results 
+
+*   Create a Safe to Send Segment - place A+ and A results in this segment 
+
+### Monitoring
+
+### Email Assurance (Monitoring and Remediation) 
+
+### Remediation
+
+### Onboard a user
+
+Using the API
+---------------------
+
+### Basic usage of the API
+
+*   Create a list
+*   Delete a list
+*   Add a member to a list
+*   Delete a member from a list
+*   Batch add members to a list
+*   Batch delete members from a list
+*   Get report for new list
+*   Get report for existing list
+*   Get single member grade
+*   Get grades for all members on a list
+
+*Using Metadata
+
+*   Group lists to a single user
+*   Create a Last updated field for monitoring and remediation
+
+### Subscription usage of API
+
+*   Retrieve list grade update daily
+*   Retrieve list grade and subscriber grade update daily
+*   Batch unsubscribe F results daily 
+*   Retrieve an Email Assurance Report for entire ESP database
+*   Retrieve subscriber email assurance grades for entire ESP database
+*   Unsubscribe emails from a list based on grade vs deleting from DV system
+
+### Recommended for ESPs
+
+*   Create a Safe to Send segment for A+ and A grades
+*   Create a segment for B grades
+*   Create a segment for D grades  
+*   Sort list members by Email Assurance Grade 
+*   Update a list grade after remediation by creating a job
+
+Onboard a User
+---------------------
+
+Overview: 
+
+Best Practices: 
+
+Uses an “onboarding token” which provides list level data
+
+-send a list to DV
+we echo back a magic url with list slug and links of what is possible to do with that slug (if the user is only being on boarded, and in the echo back we provide details on how to add/remove list members, will we be able to limit end point access?)*
+-retrieve list results
+-retrieve score for user by tagging lists with metadata*
+Then remediate/member level data:
+-call list slug/export.csv
+
+
+Examples to provide to ESP:
+
+Example of how to receive an overall sender score with metadata
+Example of how to associate multiple lists with a user with metadata tags
+
+Use Cases:
+
+List has large percentage of F results
+List has mostly A and A+ results
+List has a large percentage of B results
+List has a large percentage of D results
+
+Onboard a user without remediation
+Onboard a user and remediate select lists
+Onboard a user and remediate all lists
+
+Automate the process:
+When a user uploads a list to the ESP, the ESP sends the list to DataValidation API. Once they are finished processing, retrieve the Email Assurance Report. This can be displayed to the user for each list, or remain internal to the ESP.  
+
+
+Remediate a User's List
+---------------------
+
+Overview: 
+
+Remediate a user/Get member level data
+Export.csv
+Uses a “remediation token” 
+-send a list to DV
+-retrieve list results
+
+
+Manage a User's List
+---------------------
+
+Overview: 
+
+Manage a user's list - add/remove subscribers 
+export.csv member slug, email, metadata, EA grades
+-add a single subscriber
+-remove a single subscriber
+how to filter by grades then batch unsubscribe
+batch subscribe 
