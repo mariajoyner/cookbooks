@@ -43,6 +43,10 @@ Table of Contents
 
 ##### FAQ
 
+>Integration
+>Billing
+>Support
+
 
 Documentation
 ---------------------
@@ -246,5 +250,7 @@ Subscriptions
 FAQ
 ---------------------
 
-
+### Integration
+### Billing
+### Support
 
