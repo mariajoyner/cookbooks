@@ -6,29 +6,20 @@ Contents
 
 #### Documentation
 
-+   Getting Started
-
-+   Onboard a User
-
-+   Remediate a User's List
-
-+   Manage a User's List
+-   Getting Started
+-   Onboard a User
+-   Remediate a User's List
+-   Manage a User's List
 
 
 #### References
 
 -   Definition of Terms
-
 -   Grades
-
 -   Webhooks
-	
 -   Testing (What should I test as I integrate DV)
-	
 -   API Changelog
-	
 -   API Libraries
-	
 -   Full API Reference
 
 
@@ -53,11 +44,7 @@ Documentation
 
 ### Getting Started
 
->Basic usage of API
->
->Subscription usage of API
->
->Recommended usage
+Overview: This API is designed to....
 
 ##### Basic usage of the API
 
@@ -72,7 +59,7 @@ Documentation
 *   Get single member grade
 *   Get grades for all members on a list
 
-**Using Metadata**
+Using Metadata
 
 *   Group lists to a single user
 *   Create a Last updated field for monitoring and remediation
