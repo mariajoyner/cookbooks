@@ -6,28 +6,39 @@ Table of Contents
 
 ##### Documentation
 
-	Getting Started
-	Onboard a User
-	Remediate a User's List
-	Manage a User's List
+>Getting Started
+>
+>Onboard a User
+>
+>Remediate a User's List
+>
+>Manage a User's List
 
 
 ##### References
 
-	Definition of Terms
-	Grades
-	Webhooks
-	Testing (What should I test as I integrate DV)
-	API Changelog
-	API Libraries
-	Full API Reference
+>Definition of Terms
+>
+>Grades
+>
+>Webhooks
+>	
+>Testing (What should I test as I integrate DV)
+>	
+>API Changelog
+>	
+>API Libraries
+>	
+>Full API Reference
 
 
 ##### Subscriptions
 
-	Overview
-	Monitoring
-	Remediating
+>Overview
+>	
+>Monitoring
+>	
+>Remediating
 
 
 ##### FAQ
@@ -44,7 +55,7 @@ Documentation
 >
 >Recommended usage
 
-#### Basic usage of the API
+##### Basic usage of the API
 
 *   Create a list
 *   Delete a list
@@ -62,7 +73,7 @@ Documentation
 *   Group lists to a single user
 *   Create a Last updated field for monitoring and remediation
 
-#### Subscription usage of API
+##### Subscription usage of API
 
 *   Retrieve list grade update daily
 *   Retrieve list grade and subscriber grade update daily
@@ -71,7 +82,7 @@ Documentation
 *   Retrieve subscriber email assurance grades for entire ESP database
 *   Unsubscribe emails from a list based on grade vs deleting from DV system
 
-#### Recommended for ESPs
+##### Recommended for ESPs
 
 *   Create a Safe to Send segment for A+ and A grades
 *   Create a segment for B grades
@@ -81,26 +92,31 @@ Documentation
 
 ### Onboard a User
 
-Overview: 
+##### Overview: 
 
-Best Practices: 
+##### Best Practices: 
+
+##### How to
 
 Uses an “onboarding token” which provides list level data
 
 -send a list to DV
+
 we echo back a magic url with list slug and links of what is possible to do with that slug (if the user is only being on boarded, and in the echo back we provide details on how to add/remove list members, will we be able to limit end point access?)*
+
 -retrieve list results
+
 -retrieve score for user by tagging lists with metadata*
+
 Then remediate/member level data:
 -call list slug/export.csv
 
-
-Examples to provide to ESP:
+##### Examples to provide to ESP:
 
 Example of how to receive an overall sender score with metadata
 Example of how to associate multiple lists with a user with metadata tags
 
-Use Cases:
+##### Use Cases:
 
 List has large percentage of F results
 List has mostly A and A+ results
@@ -117,25 +133,40 @@ When a user uploads a list to the ESP, the ESP sends the list to DataValidation 
 
 ### Remediate a User's List
 
-Overview: 
+##### Overview: 
+
+##### Best Practices:
+
+#####  How to
 
 Remediate a user/Get member level data
+
 Export.csv
+
 Uses a “remediation token” 
+
 -send a list to DV
+
 -retrieve list results
 
 
 ### Manage a User's List
 
 
-Overview: 
+##### Overview: 
+
+##### Best Practices:
 
 Manage a user's list - add/remove subscribers 
+
 export.csv member slug, email, metadata, EA grades
+
 -add a single subscriber
+
 -remove a single subscriber
+
 how to filter by grades then batch unsubscribe
+
 batch subscribe 
 
 
@@ -146,8 +177,9 @@ References
 
 ### Definition of Terms
 
-	Email Assurance Report
-	Email Assurance Grade
+>Email Assurance Report
+>	
+>Email Assurance Grade
 
 #### Email Assurance Report
 
