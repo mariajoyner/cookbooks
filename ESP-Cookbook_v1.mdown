@@ -43,8 +43,11 @@ Table of Contents
 
 ##### FAQ
 
+>
 >Integration
+>
 >Billing
+>
 >Support
 
 
