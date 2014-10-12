@@ -16,25 +16,25 @@ Contents
 
 -   Definition of Terms
 -   Grades
--   Webhooks
--   Testing (What should I test as I integrate DV)
--   API Changelog
--   API Libraries
--   Full API Reference
+-   Webhooks (doesn't yet exist)
+-   Testing (doesn't yet exist)
+-   API Changelog (doesn't yet exist)
+-   API Libraries [current API docs](https://github.com/synappio/synappio-client/blob/master/api-docs/batch.yaml)
+-   Full API Reference (doesn't yet exist)
 
 
-#### Subscriptions
+#### Subscriptions (doesn't yet exist)
 
--   Overview
--  	Monitoring
--   Remediating
+-   Overview (doesn't yet exist)
+-  	Monitoring (doesn't yet exist)
+-   Remediating (doesn't yet exist)
 
 
-#### FAQ
+#### FAQ (doesn't yet exist)
 
--   Integration
--   Billing
--   Support
+-   Integration (doesn't yet exist)
+-   Billing (doesn't yet exist)
+-   Support (doesn't yet exist)
 
 
 
