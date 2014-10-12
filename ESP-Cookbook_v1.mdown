@@ -6,13 +6,10 @@ Table of Contents
 
 ##### Documentation
 
-Getting Started
-
-Onboard a User
-
-Remediate a User's List
-
-Manage a User's List
+	Getting Started
+	Onboard a User
+	Remediate a User's List
+	Manage a User's List
 
 
 ##### References
