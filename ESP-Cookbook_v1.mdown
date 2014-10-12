@@ -286,50 +286,82 @@ Get report for existing list
 
 *   Update a single member's date
     - path: /list/{list_slug}/member/{member_slug}/
+    
     operations:
+    
     method: PUT
+    
     nickname: putListMember
+    
     type: MemberResponse
+    
     notes: Use this to update a single member on your list. Note that whatever you provide in the request body will *replace* the information for that member in your list.
 
     parameters:
     - name: list_slug
+        
         paramType: path
+  	    
   	    type: string
+        
         description: The slug (ID) of the list being updated
+        
         defaultValue: random-slug
     - name: member_slug
+        
         paramType: path
+        
         type: string
+        
         description: The slug (ID) of the member being updated
+        
         defaultValue: random-or-user-defined-slug
     - name: pretty
+       
         description: Indent JSON output?
+       
         paramType: query
+       
         type: boolean
+       
         defaultValue: false
     - name: body
+        
         paramType: body
+       
         description: Member information
+       
         type: Member
 
 *   Delete a member from a list
 	- path: /list/{list_slug}/member/{member_slug}/
+
     operations:
- 	- method: DELETE
+ 	
+ 	method: DELETE
+    
     nickname: deleteListMember
+	
 	notes: Use this to remove a single member on your list.
 
 	parameters:
     - name: list_slug
+
         paramType: path
+    
         type: string
+    
         description: The slug (ID) of the list being updated
+    
         defaultValue: random-slug
     - name: member_slug
+    
         paramType: path
+    
         type: string
+    
         description: The slug (ID) of the member being updated
+    
         defaultValue: random-or-user-defined-slug
 
 
