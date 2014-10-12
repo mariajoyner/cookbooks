@@ -34,20 +34,16 @@ Contents
 
 #### Subscriptions
 
-Overview
-	
-Monitoring
-	
-Remediating
+-   Overview
+-  	Monitoring
+-   Remediating
 
 
 #### FAQ
 
-Integration
-
-Billing
-
-Support
+-   Integration
+-   Billing
+-   Support
 
 
 
