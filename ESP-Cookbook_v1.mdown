@@ -4,51 +4,50 @@ Email Assurance for ESP Cookbook
 Contents
 ---------------------
 
-##### Documentation
+#### Documentation
 
-Getting Started
++   Getting Started
 
-Onboard a User
++   Onboard a User
 
-Remediate a User's List
++   Remediate a User's List
 
-Manage a User's List
-
-
-##### References
-
->Definition of Terms
->
->Grades
->
->Webhooks
->	
->Testing (What should I test as I integrate DV)
->	
->API Changelog
->	
->API Libraries
->	
->Full API Reference
++   Manage a User's List
 
 
-##### Subscriptions
+#### References
 
->Overview
->	
->Monitoring
->	
->Remediating
+-   Definition of Terms
+
+-   Grades
+
+-   Webhooks
+	
+-   Testing (What should I test as I integrate DV)
+	
+-   API Changelog
+	
+-   API Libraries
+	
+-   Full API Reference
 
 
-##### FAQ
+#### Subscriptions
 
->
->Integration
->
->Billing
->
->Support
+Overview
+	
+Monitoring
+	
+Remediating
+
+
+#### FAQ
+
+Integration
+
+Billing
+
+Support
 
 
 
