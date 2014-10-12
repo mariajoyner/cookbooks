@@ -48,7 +48,7 @@ Overview: This API is designed to....
 
 ##### Basic usage of the API
 
-*   Create a new list
+###### Create a new list
 
 This can be used when onboarding a new user, or when an existing user uploads a new email list. 
 
@@ -85,7 +85,7 @@ This can be used when onboarding a new user, or when an existing user uploads a 
         type: integer
         description: The column in the csv containing a slug for each member. If this is omitted, a slug will be generated automatically.
 
-*   Retrieve lists
+###### Retrieve lists
 
 This can be used to retrieve list level data, such as the Email Assurance Report. It can also be used to retrieve all lists in a user's account, or all lists ESP wide. 
 
@@ -121,7 +121,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         type: boolean
         defaultValue: false
 
-*   Retrieve an individual list by its slug
+###### Retrieve an individual list by its slug
+
+This can be used to check the status of an individual list. 
 	
 	path: /list/{list_slug}/
     
@@ -143,7 +145,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         defaultValue: false
 
 
-*   Delete an individual list and all its subscribers
+###### Delete an individual list and all its subscribers
+
+This can be used to delete an individual list and all its members.
 	
 	path: /list/{list_slug}/
     
@@ -158,7 +162,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         description: The slug (ID) of the list being updated
         defaultValue: random-slug
 
-*   Add members to a list
+###### Add members to a list
+
+This can be used when new subscribers are added to an existing list.
 	
 	path: /list/{list_slug}/subscribe.csv
     
@@ -198,7 +204,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         type: integer
         description: The column in the csv containing a slug for each member. If this is omitted, a slug will be generated automatically.
 
-*   Export list subscribers
+###### Export list subscribers
+
+Retrieve the entire list of subscribers with this function.
     
     path: /list/{list_slug}/export.csv
     
@@ -216,7 +224,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         description: The slug (ID) of the list being updated
         defaultValue: random-slug
 
-*   Get the members of a list
+###### Get the members of a list
+
+Access all of the subscribers on a single list.
   	
   	path: /list/{list_slug}/member/
     
@@ -254,7 +264,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         type: boolean
         defaultValue: false
 
-* Create a new list member 
+###### Create a new list member 
+
+Add a single member to a list.
  	
  	path: /list/{list_slug}/member/
     
@@ -275,7 +287,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         paramType: body
         type: NewMember
 
-*   Get single member grade
+###### Get single member grade
+
+Get the grade for a single email address.
   	
   	path: /list/{list_slug}/member/{member_slug}/
     
@@ -303,7 +317,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         type: boolean
         defaultValue: false
 
-*   Update a single member's date
+###### Update a single member's date
+
+Update the data for a single member.
     
     path: /list/{list_slug}/member/{member_slug}/
     
@@ -335,7 +351,9 @@ This can be used to retrieve list level data, such as the Email Assurance Report
         description: Member information
         type: Member
 
-*   Delete a member from a list
+###### Delete a member from a list
+
+Delete a single member from the list.
 	
 	path: /list/{list_slug}/member/{member_slug}/
 
