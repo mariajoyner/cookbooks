@@ -372,12 +372,12 @@ Metadata
 	notes: This method is used to create a list. Note that you must provide mapping data in the URL parameters as documented below.
         
     parameters:
-    - name: header
+    name: header
     	paramType: query
         description: Is there a header row present in the CSV data
         required: true
     	type: boolean
-    - name: email_col
+    name: email_col
         paramType: query
         description: Which column is the email address in? (0 = first column)
         required: true
