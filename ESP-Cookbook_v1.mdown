@@ -38,9 +38,9 @@ Documentation
 
 ### Getting Started
 
->	Basic usage of API
->	Subscription usage of API
->	Recommended usage
+>Basic usage of API
+>Subscription usage of API
+>Recommended usage
 
 #### Basic usage of the API
 
