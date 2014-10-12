@@ -3,11 +3,13 @@ Email Assurance for ESP Cookbook
 
 Table of Contents
 ---------------------
+
 Documentation
 	Getting Started
 	Onboard a User
 	Remediate a User's List
 	Manage a User's List
+
 References
 	Definition of Terms
 	Grades
@@ -16,10 +18,12 @@ References
 	API Changelog
 	API Libraries
 	Full API Reference
+
 Subscriptions
 	Overview
 	Monitoring
 	Remediating
+
 FAQ
 
 
