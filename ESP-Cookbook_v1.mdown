@@ -1,18 +1,18 @@
 Email Assurance for ESP Cookbook
 ====================
 
-Table of Contents
+Contents
 ---------------------
 
 ##### Documentation
 
->Getting Started
->
->Onboard a User
->
->Remediate a User's List
->
->Manage a User's List
+Getting Started
+
+Onboard a User
+
+Remediate a User's List
+
+Manage a User's List
 
 
 ##### References
@@ -49,6 +49,8 @@ Table of Contents
 >Billing
 >
 >Support
+
+
 
 
 Documentation
@@ -253,7 +255,9 @@ Subscriptions
 FAQ
 ---------------------
 
-### Integration
-### Billing
-### Support
+Integration
+
+Billing
+
+Support
 
