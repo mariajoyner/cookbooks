@@ -1,57 +1,37 @@
 Email Assurance for ESP Cookbook
 ====================
 
-Definitions
+Table of Contents
+---------------------
+Documentation
+	Getting Started
+	Onboard a User
+	Remediate a User's List
+	Manage a User's List
+References
+	Definition of Terms
+	Grades
+	Webhooks
+	Testing (What should I test as I integrate DV)
+	API Changelog
+	API Libraries
+	Full API Reference
+Subscriptions
+	Overview
+	Monitoring
+	Remediating
+FAQ
+
+
+Documentation
 ---------------------
 
-### Email Assurance Report
+### Getting Started
+	Basic usage of API
+	Subscription usage of API
+	Recommended usage
 
-[Go to API Documentation on retrieving reports.]()
-
-This report is an overview of an email list’s quality. It includes the total number of subscribers in each grade category, A+, A, B, D, and F, and an overall grade for the list. This report does not provide data on specific email addresses. 
-
-Uses of this report: 
-
-*   When onboarding a new user - retrieve Email Assurance Reports on all of the lists a prospective/new user intends to use. These reports can be used to determine whether to accept the user as a trusted sender. If the user has several problematic lists, remediation can be recommended prior to deploying mail. If the user has highly questionable lists, it can be required that these lists be removed and not used in the ESP platform. 
-
-*   Prior to deploying email from a previously inactive user account - after a user has not deployed email for at least 3 months, retrieve an Email Assurance Report on the list prior to allowing the email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. 
-
-*   When a current user imports a new list - retrieve an Email Assurance Report prior to allowing email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. If the list is too risky, it can be disallowed altogether. 
-
-*   Embed the data to allow users to always see the Email Assurance Report - users can always know the list quality so it is not a surprise if remediation is recommended.
-
-### Email Assurance Grade
-
-[Go to API Documentation on retrieving grades.]()
-
-This grade — A+, A, B, D, or F— indicates an emails likelihood to be deliverable. Additional deliverability data is provided with the grade. Email Assurance Grade data is provided with the usage of a remediation token, or subscription.  
-     
-   A+ indicates engagement history such as click or optin. 
-   A indicates successful delivery history or a positive SMTP response. 
-   B indicates an accepts all domain. 
-   D indicates no response from a server, or temporary failure. 
-   F indicates an undeliverable address due to history of bounces, or a negative SMTP response. 
-
-Uses of the grades:
-
-*   Determine what grades a user can deploy email to - A+ and A results are deliverable based on our most recent data. If a user is a trusted sender, perhaps B results can be allowed. D results should not be deployed email. F results should be unsubscribed.
-
-*   Automatically unsubscribe F results 
-
-*   Create a Safe to Send Segment - place A+ and A results in this segment 
-
-### Monitoring
-
-### Email Assurance (Monitoring and Remediation) 
-
-### Remediation
-
-### Onboard a user
-
-Using the API
----------------------
-
-### Basic usage of the API
+#### Basic usage of the API
 
 *   Create a list
 *   Delete a list
@@ -69,7 +49,7 @@ Using the API
 *   Group lists to a single user
 *   Create a Last updated field for monitoring and remediation
 
-### Subscription usage of API
+#### Subscription usage of API
 
 *   Retrieve list grade update daily
 *   Retrieve list grade and subscriber grade update daily
@@ -78,7 +58,7 @@ Using the API
 *   Retrieve subscriber email assurance grades for entire ESP database
 *   Unsubscribe emails from a list based on grade vs deleting from DV system
 
-### Recommended for ESPs
+#### Recommended for ESPs
 
 *   Create a Safe to Send segment for A+ and A grades
 *   Create a segment for B grades
@@ -86,8 +66,7 @@ Using the API
 *   Sort list members by Email Assurance Grade 
 *   Update a list grade after remediation by creating a job
 
-Onboard a User
----------------------
+### Onboard a User
 
 Overview: 
 
@@ -123,8 +102,7 @@ Automate the process:
 When a user uploads a list to the ESP, the ESP sends the list to DataValidation API. Once they are finished processing, retrieve the Email Assurance Report. This can be displayed to the user for each list, or remain internal to the ESP.  
 
 
-Remediate a User's List
----------------------
+### Remediate a User's List
 
 Overview: 
 
@@ -135,8 +113,8 @@ Uses a “remediation token”
 -retrieve list results
 
 
-Manage a User's List
----------------------
+### Manage a User's List
+
 
 Overview: 
 
@@ -146,3 +124,80 @@ export.csv member slug, email, metadata, EA grades
 -remove a single subscriber
 how to filter by grades then batch unsubscribe
 batch subscribe 
+
+
+
+
+References
+---------------------
+
+### Definition of Terms
+
+Email Assurance Report
+Email Assurance Grade
+
+#### Email Assurance Report
+
+[Go to API Documentation on retrieving reports.]()
+
+This report is an overview of an email list’s quality. It includes the total number of subscribers in each grade category, A+, A, B, D, and F, and an overall grade for the list. This report does not provide data on specific email addresses. 
+
+Uses of this report: 
+
+*   When onboarding a new user - retrieve Email Assurance Reports on all of the lists a prospective/new user intends to use. These reports can be used to determine whether to accept the user as a trusted sender. If the user has several problematic lists, remediation can be recommended prior to deploying mail. If the user has highly questionable lists, it can be required that these lists be removed and not used in the ESP platform. 
+
+*   Prior to deploying email from a previously inactive user account - after a user has not deployed email for at least 3 months, retrieve an Email Assurance Report on the list prior to allowing the email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. 
+
+*   When a current user imports a new list - retrieve an Email Assurance Report prior to allowing email to be deployed. If the data is acceptable, the user can move forward without remediation. If not, the user can be recommended remediation prior to deploying the campaign. If the list is too risky, it can be disallowed altogether. 
+
+*   Embed the data to allow users to always see the Email Assurance Report - users can always know the list quality so it is not a surprise if remediation is recommended.
+
+#### Email Assurance Grade
+
+[Go to API Documentation on retrieving grades.]()
+
+This grade — A+, A, B, D, or F— indicates an emails likelihood to be deliverable. Additional deliverability data is provided with the grade. Email Assurance Grade data is provided with the usage of a remediation token, or subscription.  
+     
+   A+ indicates engagement history such as click or optin. 
+   A indicates successful delivery history or a positive SMTP response. 
+   B indicates an accepts all domain. 
+   D indicates no response from a server, or temporary failure. 
+   F indicates an undeliverable address due to history of bounces, or a negative SMTP response. 
+
+Uses of the grades:
+
+*   Determine what grades a user can deploy email to - A+ and A results are deliverable based on our most recent data. If a user is a trusted sender, perhaps B results can be allowed. D results should not be deployed email. F results should be unsubscribed.
+
+*   Automatically unsubscribe F results 
+
+*   Create a Safe to Send Segment - place A+ and A results in this segment 
+
+#### Monitoring
+
+#### Email Assurance (Monitoring and Remediation) 
+
+#### Remediation
+
+#### Onboard a user
+
+### Email Assurance Grades
+
+### Webhooks
+
+### Testing
+
+### API Changelog
+
+
+
+Subscriptions
+---------------------
+
+### Overview
+### Monitoring
+###	Remediating
+
+
+FAQ
+---------------------
+
