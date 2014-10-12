@@ -14,28 +14,20 @@ Table of Contents
 
 ##### References
 
-Definition of Terms
-
-Grades
-
-Webhooks
-
-Testing (What should I test as I integrate DV)
-
-API Changelog
-
-API Libraries
-
-Full API Reference
+	Definition of Terms
+	Grades
+	Webhooks
+	Testing (What should I test as I integrate DV)
+	API Changelog
+	API Libraries
+	Full API Reference
 
 
 ##### Subscriptions
 
-Overview
-
-Monitoring
-
-Remediating
+	Overview
+	Monitoring
+	Remediating
 
 
 ##### FAQ
@@ -151,8 +143,8 @@ References
 
 ### Definition of Terms
 
-Email Assurance Report
-Email Assurance Grade
+	Email Assurance Report
+	Email Assurance Grade
 
 #### Email Assurance Report
 
@@ -160,7 +152,7 @@ Email Assurance Grade
 
 This report is an overview of an email list’s quality. It includes the total number of subscribers in each grade category, A+, A, B, D, and F, and an overall grade for the list. This report does not provide data on specific email addresses. 
 
-Uses of this report: 
+**Uses of this report:** 
 
 *   When onboarding a new user - retrieve Email Assurance Reports on all of the lists a prospective/new user intends to use. These reports can be used to determine whether to accept the user as a trusted sender. If the user has several problematic lists, remediation can be recommended prior to deploying mail. If the user has highly questionable lists, it can be required that these lists be removed and not used in the ESP platform. 
 
@@ -182,7 +174,7 @@ This grade — A+, A, B, D, or F— indicates an emails likelihood to be deliver
    D indicates no response from a server, or temporary failure. 
    F indicates an undeliverable address due to history of bounces, or a negative SMTP response. 
 
-Uses of the grades:
+**Uses of the grades:**
 
 *   Determine what grades a user can deploy email to - A+ and A results are deliverable based on our most recent data. If a user is a trusted sender, perhaps B results can be allowed. D results should not be deployed email. F results should be unsubscribed.
 
@@ -218,4 +210,6 @@ Subscriptions
 
 FAQ
 ---------------------
+
+
 
