@@ -50,7 +50,7 @@ Overview: This API is designed to....
 
 ###### Create a new list
 
-This can be used when onboarding a new user, or when an existing user uploads a new email list. 
+This can be used when onboarding a new user, or when an existing user uploads a new email list. Note: Creating a new list will consume an onboarding token per subscriber on the list. 
 
 ###### Retrieve lists
 
@@ -68,9 +68,10 @@ This can be used to delete an individual list and all its members.
 
 This can be used when new subscribers are added to an existing list.
 
-###### Export list subscribers
+###### Export list subscribers to get grades for all members on a list
 
 Retrieve the entire list of subscribers with this function.
+Note: Export list subscribers will consume a remediation token per subscriber on the list.
 
 ###### Get the members of a list
 
@@ -83,6 +84,7 @@ Add a single member to a list.
 ###### Get single member grade
 
 Get the grade for a single email address.
+Note: Getting a single member grade will consume a remediation token per member.
 
 ###### Update a single member's date
 
@@ -92,11 +94,7 @@ Update the data for a single member.
 
 Delete a single member from the list.
 
-*   Batch delete members from a list
-*   Get grades for all members on a list
-
-Metadata
-*   Create a Last updated field for monitoring and remediation
+###### Batch delete members from a list
 
 ##### Subscription usage of API
 
@@ -109,84 +107,35 @@ Metadata
 
 ##### Recommended for ESPs
 
-*   Create a Safe to Send segment for A+ and A grades
-*   Create a segment for B grades
-*   Create a segment for D grades  
+*   Create a Safe to Send segment for A+ and A grades 
 *   Sort list members by Email Assurance Grade 
 *   Update a list grade after remediation by creating a job
 
 ### Onboard a User
 
-##### Overview: 
-
-##### How to
-
-##### Best Practices: 
-
-Uses an “onboarding token” which provides list level data
-
--send a list to DV
-
-we echo back a magic url with list slug and links of what is possible to do with that slug (if the user is only being on boarded, and in the echo back we provide details on how to add/remove list members, will we be able to limit end point access?)*
-
--retrieve list results
+From zero to retrieving stats
 
 
-##### Examples to provide to ESP:
+### Onboard a User with Remediation
+
+From zero to retrieving stats to remediate
 
 
-##### Use Cases:
+### Remediate a New List
 
-List has large percentage of F results
-List has mostly A and A+ results
-List has a large percentage of B results
-List has a large percentage of D results
-
-Onboard a user without remediation
-Onboard a user and remediate select lists
-Onboard a user and remediate all lists
-
-Automate the process:
-When a user uploads a list to the ESP, the ESP sends the list to DataValidation API. Once they are finished processing, retrieve the Email Assurance Report. This can be displayed to the user for each list, or remain internal to the ESP.  
-
-
-### Remediate a User's List
-
-##### Overview: 
-
-##### Best Practices:
-
-#####  How to
-
-Remediate a user/Get member level data
-
-Export.csv
-
-Uses a “remediation token” 
-
--send a list to DV
-
--retrieve list results
+### Remediate an Existing List
 
 
 ### Manage a User's List
 
+-add a single member
 
-##### Overview: 
+-remove a single member
 
-##### Best Practices:
+-batch add members
 
-Manage a user's list - add/remove subscribers 
+-batch delete members
 
-export.csv member slug, email, metadata, EA grades
-
--add a single subscriber
-
--remove a single subscriber
-
-how to filter by grades then batch unsubscribe
-
-batch subscribe 
 
 
 
