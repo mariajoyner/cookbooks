@@ -52,337 +52,50 @@ Overview: This API is designed to....
 
 This can be used when onboarding a new user, or when an existing user uploads a new email list. 
 
-	path: /list/
-
-	operations:
-	method: POST
-	nickname: createList
-	type: ListResponse
-	consumes: ['text/csv']
-
-	notes: This method is used to create a list. Note that you must provide mapping data in the URL parameters as documented below.
-        
-    parameters:
-    name: header
-    	paramType: query
-        description: Is there a header row present in the CSV data
-        required: true
-    	type: boolean
-    name: email_col
-        paramType: query
-        description: Which column is the email address in? (0 = first column)
-        required: true
-        type: integer
-    name: metadata
-        paramType: query
-        required: true
-        type: string
-   	    format: other
-        description: Should the metadata (non-email) in the CSV be stored? (true or false)
-    name: slug_col
-        required: false
-        paramType: query
-        type: integer
-        description: The column in the csv containing a slug for each member. If this is omitted, a slug will be generated automatically.
-
 ###### Retrieve lists
 
 This can be used to retrieve list level data, such as the Email Assurance Report. It can also be used to retrieve all lists in a user's account, or all lists ESP wide. 
 
-	path: /list/
-	
-	operations:
-    method: GET
-    nickname: getLists
-    type: ListCollection
-    
-    notes: You can use this to retrieve summary or detailed data about all the lists in your account, or just a few using filters.
-
-    parameters:
-    name: paging.skip
-    	description: Paging offset
-    	type: integer
-    	paramType: query
-    	defaultValue: 0
-    name: paging.limit
-    	description: Paging limit
-    	type: integer
-    	paramType: query
-    	defaultValue: 50
-    	maximum: 500
-    name: _expand
-        description: Expand the list of items?
-        paramType: query
-        type: boolean
-        defaultValue: false
-    name: pretty
-        description: Indent JSON output?
-        paramType: query
-        type: boolean
-        defaultValue: false
-
 ###### Retrieve an individual list by its slug
 
 This can be used to check the status of an individual list. 
-	
-	path: /list/{list_slug}/
-    
-    operations:
-    method: GET
-    nickname: getList
-    type: ListResponse
-        
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: pretty
-        description: Indent JSON output?
-        paramType: query
-        type: boolean
-        defaultValue: false
-
 
 ###### Delete an individual list and all its subscribers
 
 This can be used to delete an individual list and all its members.
-	
-	path: /list/{list_slug}/
-    
-    operations:
-    method: DELETE
-    nickname: deleteList
-   
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
 
 ###### Add members to a list
 
 This can be used when new subscribers are added to an existing list.
-	
-	path: /list/{list_slug}/subscribe.csv
-    
-    operations:
-    method: POST
-    nickname: appendList
-    type: ListResponse
-    consumes: ['text/csv']
-    
-    notes: This method is used to subscribe additional users to a list. Note that you must provide mapping data in the URL parameters as documented below.
-        
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: header
-        paramType: query
-        description: Is there a header row present in the CSV data
-        required: true
-        type: boolean
-    name: email_col
-        paramType: query
-        description: Which column is the email address in? (0 = first column)
-        required: true
-        type: integer
-    name: metadata
-        paramType: query
-        required: true
-        type: string
-        format: other
-        description: Should the metadata (non-email) in the CSV be stored? (true or false)
-    name: slug_col
-	    required: false
-        paramType: query
-        type: integer
-        description: The column in the csv containing a slug for each member. If this is omitted, a slug will be generated automatically.
 
 ###### Export list subscribers
 
 Retrieve the entire list of subscribers with this function.
-    
-    path: /list/{list_slug}/export.csv
-    
-    operations:
-    method: GET
-    nickname: exportList
-    produces: ['text/csv']
-    
-    notes: Use this method for bulk export of list subscribers.
-        
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
 
 ###### Get the members of a list
 
 Access all of the subscribers on a single list.
-  	
-  	path: /list/{list_slug}/member/
-    
-    operations:
-    method: GET
-    nickname: getListMembers
-    
-    notes: Use this to retrieve / filter the members of your list
-
-    parameters:
-   	name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: paging.skip
-        description: Paging offset
-        type: integer
-        paramType: query
-        defaultValue: 0
-    name: paging.limit
-        description: Paging limit
-        type: integer
-        paramType: query
-        defaultValue: 50
-        maximum: 500
-    name: _expand
-        description: Expand the list of items?
-        paramType: query
-        type: boolean
-        defaultValue: false
-    name: pretty
-        description: Indent JSON output?
-        paramType: query
-        type: boolean
-        defaultValue: false
 
 ###### Create a new list member 
 
 Add a single member to a list.
- 	
- 	path: /list/{list_slug}/member/
-    
-    operations:
-    method: POST
-    nickname: createListMember
-    type: MemberResponse
-    
-    notes: Use this to create a single member on your list.
-    
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: body
-        paramType: body
-        type: NewMember
 
 ###### Get single member grade
 
 Get the grade for a single email address.
-  	
-  	path: /list/{list_slug}/member/{member_slug}/
-    
-    operations:
-    method: GET
-    nickname: getListMember
-    type: MemberResponse
-	
-	notes: Use this to get a single member from your list.
-    
-    parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: member_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the member being updated
-        defaultValue: random-or-user-defined-slug
-    name: pretty
-        description: Indent JSON output?
-        paramType: query
-        type: boolean
-        defaultValue: false
 
 ###### Update a single member's date
 
 Update the data for a single member.
-    
-    path: /list/{list_slug}/member/{member_slug}/
-    
-    operations:
-    method: PUT
-    nickname: putListMember
-    type: MemberResponse
-    
-    notes: Use this to update a single member on your list. Note that whatever you provide in the request body will *replace* the information for that member in your list.
-
-    parameters:
-    name: list_slug    
-        paramType: path
-  	    type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: member_slug    
-        paramType: path
-        type: string
-        description: The slug (ID) of the member being updated
-        defaultValue: random-or-user-defined-slug
-    name: pretty
-        description: Indent JSON output?
-        paramType: query
-        type: boolean
-        defaultValue: false
-    name: body
-        paramType: body
-        description: Member information
-        type: Member
 
 ###### Delete a member from a list
 
 Delete a single member from the list.
-	
-	path: /list/{list_slug}/member/{member_slug}/
-
-    operations:
- 	
- 	method: DELETE
-    
-    nickname: deleteListMember
-	
-	notes: Use this to remove a single member on your list.
-
-	parameters:
-    name: list_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the list being updated
-        defaultValue: random-slug
-    name: member_slug
-        paramType: path
-        type: string
-        description: The slug (ID) of the member being updated
-        defaultValue: random-or-user-defined-slug
-
 
 *   Batch delete members from a list
 *   Get grades for all members on a list
 
 Metadata
-*   Group lists to a single user
 *   Create a Last updated field for monitoring and remediation
 
 ##### Subscription usage of API
@@ -418,15 +131,9 @@ we echo back a magic url with list slug and links of what is possible to do with
 
 -retrieve list results
 
--retrieve score for user by tagging lists with metadata*
-
-Then remediate/member level data:
--call list slug/export.csv
 
 ##### Examples to provide to ESP:
 
-Example of how to receive an overall sender score with metadata
-Example of how to associate multiple lists with a user with metadata tags
 
 ##### Use Cases:
 
