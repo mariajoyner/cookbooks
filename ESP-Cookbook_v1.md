@@ -16,9 +16,6 @@ Contents
 
 -   Definition of Terms
 -   Grades
--   Webhooks (doesn't yet exist)
--   Testing (doesn't yet exist)
--   API Changelog (doesn't yet exist)
 -   API Libraries [current API docs](https://github.com/synappio/synappio-client/blob/master/api-docs/batch.yaml)
 -   Full API Reference (doesn't yet exist)
 
@@ -184,23 +181,6 @@ This grade — A+, A, B, D, or F— indicates an emails likelihood to be deliver
 *   Automatically unsubscribe F results 
 
 *   Create a Safe to Send Segment - place A+ and A results in this segment 
-
-#### Monitoring
-
-#### Email Assurance (Monitoring and Remediation) 
-
-#### Remediation
-
-#### Onboard a user
-
-### Email Assurance Grades
-
-### Webhooks
-
-### Testing
-
-### API Changelog
-
 
 
 Subscriptions
