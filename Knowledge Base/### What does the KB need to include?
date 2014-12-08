@@ -1,0 +1,117 @@
+### What does the KB need to include?
+
+All Posts - Home
+Category - 
+Section -
+Article -
+
+Title
+Author
+Date Posted
+
+Sidebar
+Search
+	Labels = Tags (Category, Section, Topic)
+
+Recently viewed articles
+
+Related articles
+
+Share on Social Media
+Was this article helpful? 
+	Thumbs-up / Thumbs-down
+	Show count x of x found this helpful
+
+Disqus comments
+
+Have more questions? Submit a request<email>
+
+-----------------
+
+/kb/
+KB Home Page (All Posts)
+
+	Category 
+		Sections
+			Articles (# to show)
+			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+	Category 
+		Sections
+			Articles (# to show)
+			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+	Category 
+		Sections
+			Articles (# to show)
+			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+/kb/{{category}}
+Category Page (All Posts)
+
+	Section 
+		Articles (Show 7)
+		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+	Section 
+		Articles (Show 7)
+		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+	Section 
+		Articles (Show 7)
+		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+
+/kb/{{category}}/{{section}}
+Section Page (Most Recent Posts Page)
+
+	Articles (show all)
+
+/kb/{{tags}}
+Search Results Page
+	{sidebar-right Tag Cloud}
+
+	Show articles having tag
+	10 articles on a page
+
+Article 
+	{sidebar-right 
+	Other articles in this section
+	Other articles with similar tags
+	Tag Cloud}
+
+	Image 
+	Title
+	Author
+	Date
+
+	<body>
+
+	Also try these articles...
+
+	Share on Social Media
+
+{{kb signature:
+	Was this article helpful? 
+	Thumbs-up / Thumbs-down
+	Show count x of x found this helpful
+
+	Have more questions? Submit a request<email>
+}}
+	
+	<disqus>
+
+------
+Category - any sections and articles in this category
+
+Label - tags with article topic, category name, section name, article name, and main topic of article (what would people search if looking for this)
+
+-----
+
+Replicate the blog design
+/kb/
+kb/{{article}}
+and sort by Categories and Tags
+
+
+
+
