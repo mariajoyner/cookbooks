@@ -1,0 +1,30 @@
+---
+title: DataValidation Knowledge Base
+header: Top Knowledge Base Articles
+layout: default.hbs
+meta-type: kb
+meta-description: Top Knowledge Base Articles
+---
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 tag-cloud">
+      {{#labels }} 
+        <span class="label label-default"><a href ="kb/tag/{{label}}.html">{{label}}</a></span>
+      {{/labels }}
+      </div>
+    </div>
+    <div class="row">
+    {{#withFirst blog-entry 9 }}
+      {{#each this.pages}}
+        {{> post-summary}}
+      {{/each}}
+    {{/withFirst}}
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <a href="/kb/all-posts.html">View All Knowledge Base Articles<i class="fa fa-chevron-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
