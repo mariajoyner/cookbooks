@@ -34,32 +34,32 @@ KB Home Page (All Posts)
 	Category 
 		Sections
 			Articles (# to show)
-			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+			<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 	Category 
 		Sections
 			Articles (# to show)
-			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+			<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 	Category 
 		Sections
 			Articles (# to show)
-			<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+			<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 /kb/{{category}}
 Category Page (All Posts)
 
 	Section 
 		Articles (Show 7)
-		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+		<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 	Section 
 		Articles (Show 7)
-		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+		<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 	Section 
 		Articles (Show 7)
-		<a href="/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
+		<a href="https://datavalidation.zendesk.com/kb/{{section}}" class="see-all-articles">See all {% total%} articles</a>
 
 /kb/{{category}}/{{section}}
 Section Page (Most Recent Posts Page)
@@ -112,6 +112,8 @@ Replicate the blog design
 kb/{{article}}
 and sort by Categories and Tags
 
+/kb/uniqueidentifier/article-name-bloh.html
 
+/kb/uniqueidentifier.html 
 
 

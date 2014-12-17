@@ -4,7 +4,7 @@
 <h1>Posts tagged "{{label}}"</h1>
 {{#pages}}
   <div>
-    <a href="/kb/{{this.filename}}">{{this.data.title}}</a>
+    <a href="https://datavalidation.zendesk.com/kb/{{this.filename}}">{{this.data.title}}</a>
   </div>
 {{/pages}}
 
@@ -13,7 +13,7 @@
 <h1>Posts with category "{{category}}"</h1>
 {{#pages}}
   <div>
-    <a href="/kb/{{this.filename}}">{{this.data.title}}</a>
+    <a href="https://datavalidation.zendesk.com/kb/{{this.filename}}">{{this.data.title}}</a>
   </div>
 {{/pages}}
 
@@ -60,12 +60,12 @@ layout: kb.hbs
                     <p>
                       {{#withSort blog-entry 'data.posted'}}
                         {{#withFirst this.pages 5}}
-                          <a href="/kb/{{this.filename}}">{{this.data.title}}</a><br/>
+                          <a href="https://datavalidation.zendesk.com/kb/{{this.filename}}">{{this.data.title}}</a><br/>
                         {{/withFirst}}
                       {{/withSort}}
                     </p>
                     <p>
-                      <strong><a href="/kb/index.html">View All Recent Posts &gt;</a></strong>
+                      <strong><a href="https://datavalidation.zendesk.com/kb/index.html">View All Recent Posts &gt;</a></strong>
                     </p>
                     <h4>Categories</h4>
                     <hr>
@@ -145,7 +145,7 @@ layout: kb.hbs
 
 <div class="blog-entry">
   <div class="summary-image" style='background-image:url("{{data.image}}")'></div>
-  <h2><a href="/blog/{{filename}}">{{data.header}}</a></h2>
+  <h2><a href="https://datavalidation.zendesk.com/blog/{{filename}}">{{data.header}}</a></h2>
   <div class="byline">{{formatDateTime data.posted "MMMM Do YYYY"}}</div>
   <div class="abstract ellipsis">
     {{#markdown}}
@@ -153,6 +153,6 @@ layout: kb.hbs
     {{/markdown}}
   </div>
   <div class="read-more">
-    <a href="/blog/{{filename}}" class="btn btn-default">Read More&hellip;</a>
+    <a href="https://datavalidation.zendesk.com/blog/{{filename}}" class="btn btn-default">Read More&hellip;</a>
   </div>
 </div>

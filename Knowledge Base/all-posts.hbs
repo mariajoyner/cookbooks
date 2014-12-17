@@ -9,13 +9,13 @@ meta-description: All Knowledge Base Articles
   {{#each this.pages }}
   <div class="blog-entry">
     <img src="{{data.image}}" style="width:100%">
-    <h2><a href="/kb/{{filename}}">{{data.header}}</a></h2>
+    <h2><a href="https://datavalidation.zendesk.com/kb/{{filename}}">{{data.header}}</a></h2>
     <div class="byline">Posted by {{data.author}}, {{formatDateTime data.posted "MMMM Do YYYY"}}</div>
     {{#markdown}}
       {{data.abstract}}
     {{/markdown}}
     <div class="read-more">
-      <a href="/kb/{{filename}}" class="btn btn-default">Read More&hellip;</a>
+      <a href="https://datavalidation.zendesk.com/kb/{{filename}}" class="btn btn-default">Read More&hellip;</a>
     </div>
     {{> post-social}}
   </div>
